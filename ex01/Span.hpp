@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:17:50 by zwong             #+#    #+#             */
-/*   Updated: 2023/07/28 15:17:53 by zwong            ###   ########.fr       */
+/*   Updated: 2023/07/28 15:39:13 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ class Span {
 
         // Functions
         void addNumber(const int &num);
+        void fillNumbers(std::vector<int>::iterator start, std::vector<int>::iterator end);
         unsigned int shortestSpan();
         unsigned int longestSpan();
         void printContents();

@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 15:17:47 by zwong             #+#    #+#             */
-/*   Updated: 2023/07/28 15:17:53 by zwong            ###   ########.fr       */
+/*   Updated: 2023/07/28 15:38:34 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,17 @@ void Span::addNumber(const int &num) {
     if (_container.size() >= _size)
         throw (OutOfCapacityException()); // throw exception
     this->_container.push_back(num);
+}
+
+void Span::fillNumbers(std::vector<int>::iterator start, std::vector<int>::iterator end) {
+  for (; start < end; start++) {
+    try {
+      addNumber(*start);
+    }
+    catch(const std::exception& err) {
+      std::cout << RED << "Failed to fill nunmbers into span" << err.what() << std::endl << RESET;
+    }
+  }
 }
 
 unsigned int Span::shortestSpan() {

@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 18:35:20 by zwong             #+#    #+#             */
-/*   Updated: 2023/07/28 15:22:36 by zwong            ###   ########.fr       */
+/*   Updated: 2023/07/28 15:43:52 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int main() {
     std::cout << GREEN << "Longest span is: " << span.longestSpan() << std::endl << RESET;
     std::cout << std::endl;
 
+    // Deep copy
     std::cout << MAGENTA << "----- TESTING DEEP COPY -----" << std::endl << RESET;
     Span copy = span;
     std::cout << YELLOW << "Adding number to copy..." << std::endl << RESET;
@@ -50,6 +51,21 @@ int main() {
     std::cout << YELLOW << "Copy span contents..." << std::endl << RESET;
     copy.printContents();
     std::cout << GREEN << "YES, it is deep copy!" << std::endl << RESET;
+    std::cout << std::endl;
+
+    // Fill span
+    std::cout << MAGENTA << "----- TESTING FILL SPAN WITH ITER RANGE -----" << std::endl << RESET;
+    span = Span(20000);
+    std::vector<int> numbers;
+    for (int i = 0; i < 15000; i++) {
+        numbers.push_back(i);
+    }
+    std::cout << YELLOW << "Filling with numbers from 0 to 15000..." << std::endl << RESET;
+    span.fillNumbers(numbers.begin(), numbers.end()); // fill numbers from given vector range
+    span.printContents();
+    std::cout << YELLOW << "Calculating shortest and longest span..." << std::endl << RESET;
+    std::cout << GREEN << "Shortest span is: " << span.shortestSpan() << std::endl << RESET;
+    std::cout << GREEN << "Longest span is: " << span.longestSpan() << std::endl << RESET;
     std::cout << std::endl;
     return (0);
 }
