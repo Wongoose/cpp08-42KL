@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 18:35:20 by zwong             #+#    #+#             */
-/*   Updated: 2023/07/28 12:02:01 by zwong            ###   ########.fr       */
+/*   Updated: 2023/08/03 00:40:51 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 // Learning about iterator and algorthims
 // Using Container
 // Vector vs list?
+// std::vector/list (library) comes with it's own iterator (librarian) *helps to look for books
+// Agree on one standard e.g. begin(), end()... (in base::iterator)
+// Linklist vs iterator (generic, doesn't hold value)
 int main() {
     std::cout << MAGENTA << "----- TESTING WITH VECTOR -----" << std::endl << RESET;
     std::vector<int> vector; // what is std::vector?
