@@ -6,14 +6,14 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 18:35:20 by zwong             #+#    #+#             */
-/*   Updated: 2023/08/03 00:40:51 by zwong            ###   ########.fr       */
+/*   Updated: 2023/08/08 13:47:11 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
 
 // Learning about iterator and algorthims
-// Using Container
+// Container is just a term used in the subject to describe an group of content
 // Vector vs list?
 // std::vector/list (library) comes with it's own iterator (librarian) *helps to look for books
 // Agree on one standard e.g. begin(), end()... (in base::iterator)
