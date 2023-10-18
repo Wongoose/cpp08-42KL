@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 13:25:05 by zwong             #+#    #+#             */
-/*   Updated: 2023/08/08 13:36:50 by zwong            ###   ########.fr       */
+/*   Updated: 2023/10/18 15:24:49 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,14 @@ class MutantStack : public std::stack<T> {
 
         // Operators
         MutantStack &operator=(const MutantStack &other) {
-            std::stack<T>::operator=(other); // don't understand this part
+            std::stack<T>::operator=(other); // to ensure the base class is assigned (=) properly also
+            // Cannot just use *this = other (shallow copy, base class is not assigned)
             return (*this);
         };
 
+        // Not creating new iterators
+        // Making use of the underlying iterators in container_type
+        // Simplifying the names (typdef)
         typedef typename std::stack<T>::container_type::iterator iterator;
         typedef typename std::stack<T>::container_type::const_iterator const_iterator;
         typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
@@ -54,6 +58,8 @@ class MutantStack : public std::stack<T> {
         // Setters
 
         // Functions
+        // Where does 'c' come from?
+        // c = container, open std::stack to view more
         iterator begin(void) { return (std::stack<T>::c.begin()); }
         iterator end(void) { return (std::stack<T>::c.end()); }
         const_iterator begin(void) const { return (std::stack<T>::c.begin()); }
