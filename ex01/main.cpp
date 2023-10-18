@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 18:35:20 by zwong             #+#    #+#             */
-/*   Updated: 2023/10/18 14:56:23 by zwong            ###   ########.fr       */
+/*   Updated: 2023/10/18 14:58:34 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,12 @@ int main() {
     // Fill span
     std::cout << MAGENTA << "----- TESTING FILL SPAN WITH ITER RANGE -----" << std::endl << RESET;
     span = Span(20000);
-    std::vector<int> numbers;
+    std::vector<int> numbers; // this is a containers with integers
     for (int i = 0; i < 15000; i++) {
         numbers.push_back(i);
     }
     std::cout << YELLOW << "Filling with numbers from 0 to 15000..." << std::endl << RESET;
-    span.fillNumbers(numbers.begin(), numbers.end()); // fill numbers from given vector range
+    span.fillNumbers(numbers.begin(), numbers.end()); // fill numbers from given vector range (aka container)
     // span.printContents();
     std::cout << YELLOW << "Calculating shortest and longest span..." << std::endl << RESET;
     std::cout << GREEN << "Shortest span is: " << span.shortestSpan() << std::endl << RESET;
