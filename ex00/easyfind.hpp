@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 11:29:35 by zwong             #+#    #+#             */
-/*   Updated: 2023/07/28 11:59:13 by zwong            ###   ########.fr       */
+/*   Updated: 2023/10/18 14:44:54 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 template<typename T>
 typename T::iterator easyfind(T &container, const int &i) {
     typename T::iterator result = std::find(container.begin(), container.end(), i);
+    // If cannot find, PDF says can throw an exception
     if (result == container.end())
         throw (std::out_of_range("Cannot find target in container!"));
     return (result);

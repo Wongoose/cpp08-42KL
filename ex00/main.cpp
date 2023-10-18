@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 18:35:20 by zwong             #+#    #+#             */
-/*   Updated: 2023/08/08 13:47:11 by zwong            ###   ########.fr       */
+/*   Updated: 2023/10/18 14:48:37 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // Learning about iterator and algorthims
 // Container is just a term used in the subject to describe an group of content
 // Vector vs list?
-// std::vector/list (library) comes with it's own iterator (librarian) *helps to look for books
+// std::vector/list (library) comes with it's own iterator (aka. librarian) *which helps to look for books
 // Agree on one standard e.g. begin(), end()... (in base::iterator)
 // Linklist vs iterator (generic, doesn't hold value)
 int main() {
@@ -33,7 +33,7 @@ int main() {
     std::cout << YELLOW << "Finding number '42' in vector container..." << std::endl << RESET;
     try {
         std::cout << GREEN << "Found number: " << *easyfind(vector, 42) << std::endl << RESET;
-        std::cout << GREEN << "Found number: " << *(easyfind(vector, 42) += 2) << std::endl << RESET; // adding unto the T::iterator result will move up the list
+        std::cout << GREEN << "Found number (+ 2 steps): " << *(easyfind(vector, 42) += 2) << std::endl << RESET; // adding unto the T::iterator result will move up the list
     } catch (std::exception &err) {
         std::cout << RED << "Failed easyfind() with catch error: " << err.what() << std::endl << RESET;
     }
@@ -53,7 +53,7 @@ int main() {
     std::cout << YELLOW << "Finding number '42' in list container..." << std::endl << RESET;
     try {
         std::cout << GREEN << "Found number: " << *easyfind(list, 42) << std::endl << RESET;
-        std::cout << GREEN << "Found number: " << *(++easyfind(list, 42)) << std::endl << RESET; // increment the T::iterator result will move up the list
+        std::cout << GREEN << "Found number (+ 1 step): " << *(++easyfind(list, 42)) << std::endl << RESET; // increment the T::iterator result will move up the list
     } catch (std::exception &err) {
         std::cout << RED << "Failed easyfind() with catch error: " << err.what() << std::endl << RESET;
     }
